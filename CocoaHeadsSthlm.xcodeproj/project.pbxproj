@@ -13,7 +13,57 @@
 		0F755A171BBFF0B8008C0016 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F755A151BBFF0B8008C0016 /* Main.storyboard */; };
 		0F755A191BBFF0B8008C0016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F755A181BBFF0B8008C0016 /* Assets.xcassets */; };
 		0F755A1C1BBFF0B8008C0016 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F755A1A1BBFF0B8008C0016 /* LaunchScreen.storyboard */; };
+		0F755A291BBFF0EA008C0016 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F755A271BBFF0EA008C0016 /* Interface.storyboard */; };
+		0F755A2B1BBFF0EA008C0016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F755A2A1BBFF0EA008C0016 /* Assets.xcassets */; };
+		0F755A321BBFF0EA008C0016 /* CocoaHeadsSthlmWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0F755A311BBFF0EA008C0016 /* CocoaHeadsSthlmWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0F755A3A1BBFF0EA008C0016 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F755A391BBFF0EA008C0016 /* InterfaceController.m */; };
+		0F755A3D1BBFF0EA008C0016 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F755A3C1BBFF0EA008C0016 /* ExtensionDelegate.m */; };
+		0F755A401BBFF0EA008C0016 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F755A3F1BBFF0EA008C0016 /* NotificationController.m */; };
+		0F755A421BBFF0EA008C0016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F755A411BBFF0EA008C0016 /* Assets.xcassets */; };
+		0F755A461BBFF0EA008C0016 /* CocoaHeadsSthlmWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0F755A251BBFF0EA008C0016 /* CocoaHeadsSthlmWatch.app */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0F755A331BBFF0EA008C0016 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F755A011BBFF0B8008C0016 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F755A301BBFF0EA008C0016;
+			remoteInfo = "CocoaHeadsSthlmWatch Extension";
+		};
+		0F755A441BBFF0EA008C0016 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F755A011BBFF0B8008C0016 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F755A241BBFF0EA008C0016;
+			remoteInfo = CocoaHeadsSthlmWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0F755A4A1BBFF0EA008C0016 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0F755A321BBFF0EA008C0016 /* CocoaHeadsSthlmWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F755A4E1BBFF0EA008C0016 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				0F755A461BBFF0EA008C0016 /* CocoaHeadsSthlmWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0F755A091BBFF0B8008C0016 /* CocoaHeadsSthlm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaHeadsSthlm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,10 +76,31 @@
 		0F755A181BBFF0B8008C0016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F755A1B1BBFF0B8008C0016 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F755A1D1BBFF0B8008C0016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F755A251BBFF0EA008C0016 /* CocoaHeadsSthlmWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaHeadsSthlmWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F755A281BBFF0EA008C0016 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		0F755A2A1BBFF0EA008C0016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0F755A2C1BBFF0EA008C0016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F755A311BBFF0EA008C0016 /* CocoaHeadsSthlmWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CocoaHeadsSthlmWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F755A371BBFF0EA008C0016 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		0F755A381BBFF0EA008C0016 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		0F755A391BBFF0EA008C0016 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		0F755A3B1BBFF0EA008C0016 /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		0F755A3C1BBFF0EA008C0016 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		0F755A3E1BBFF0EA008C0016 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		0F755A3F1BBFF0EA008C0016 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		0F755A411BBFF0EA008C0016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0F755A431BBFF0EA008C0016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0F755A061BBFF0B8008C0016 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F755A2E1BBFF0EA008C0016 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				0F755A0B1BBFF0B8008C0016 /* CocoaHeadsSthlm */,
+				0F755A261BBFF0EA008C0016 /* CocoaHeadsSthlmWatch */,
+				0F755A351BBFF0EA008C0016 /* CocoaHeadsSthlmWatch Extension */,
 				0F755A0A1BBFF0B8008C0016 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				0F755A091BBFF0B8008C0016 /* CocoaHeadsSthlm.app */,
+				0F755A251BBFF0EA008C0016 /* CocoaHeadsSthlmWatch.app */,
+				0F755A311BBFF0EA008C0016 /* CocoaHeadsSthlmWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,6 +154,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0F755A261BBFF0EA008C0016 /* CocoaHeadsSthlmWatch */ = {
+			isa = PBXGroup;
+			children = (
+				0F755A271BBFF0EA008C0016 /* Interface.storyboard */,
+				0F755A2A1BBFF0EA008C0016 /* Assets.xcassets */,
+				0F755A2C1BBFF0EA008C0016 /* Info.plist */,
+			);
+			path = CocoaHeadsSthlmWatch;
+			sourceTree = "<group>";
+		};
+		0F755A351BBFF0EA008C0016 /* CocoaHeadsSthlmWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0F755A381BBFF0EA008C0016 /* InterfaceController.h */,
+				0F755A391BBFF0EA008C0016 /* InterfaceController.m */,
+				0F755A3B1BBFF0EA008C0016 /* ExtensionDelegate.h */,
+				0F755A3C1BBFF0EA008C0016 /* ExtensionDelegate.m */,
+				0F755A3E1BBFF0EA008C0016 /* NotificationController.h */,
+				0F755A3F1BBFF0EA008C0016 /* NotificationController.m */,
+				0F755A411BBFF0EA008C0016 /* Assets.xcassets */,
+				0F755A431BBFF0EA008C0016 /* Info.plist */,
+				0F755A361BBFF0EA008C0016 /* Supporting Files */,
+			);
+			path = "CocoaHeadsSthlmWatch Extension";
+			sourceTree = "<group>";
+		};
+		0F755A361BBFF0EA008C0016 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0F755A371BBFF0EA008C0016 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,15 +198,51 @@
 				0F755A051BBFF0B8008C0016 /* Sources */,
 				0F755A061BBFF0B8008C0016 /* Frameworks */,
 				0F755A071BBFF0B8008C0016 /* Resources */,
+				0F755A4E1BBFF0EA008C0016 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0F755A451BBFF0EA008C0016 /* PBXTargetDependency */,
 			);
 			name = CocoaHeadsSthlm;
 			productName = CocoaHeadsSthlm;
 			productReference = 0F755A091BBFF0B8008C0016 /* CocoaHeadsSthlm.app */;
 			productType = "com.apple.product-type.application";
+		};
+		0F755A241BBFF0EA008C0016 /* CocoaHeadsSthlmWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F755A4B1BBFF0EA008C0016 /* Build configuration list for PBXNativeTarget "CocoaHeadsSthlmWatch" */;
+			buildPhases = (
+				0F755A231BBFF0EA008C0016 /* Resources */,
+				0F755A4A1BBFF0EA008C0016 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0F755A341BBFF0EA008C0016 /* PBXTargetDependency */,
+			);
+			name = CocoaHeadsSthlmWatch;
+			productName = CocoaHeadsSthlmWatch;
+			productReference = 0F755A251BBFF0EA008C0016 /* CocoaHeadsSthlmWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		0F755A301BBFF0EA008C0016 /* CocoaHeadsSthlmWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F755A471BBFF0EA008C0016 /* Build configuration list for PBXNativeTarget "CocoaHeadsSthlmWatch Extension" */;
+			buildPhases = (
+				0F755A2D1BBFF0EA008C0016 /* Sources */,
+				0F755A2E1BBFF0EA008C0016 /* Frameworks */,
+				0F755A2F1BBFF0EA008C0016 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CocoaHeadsSthlmWatch Extension";
+			productName = "CocoaHeadsSthlmWatch Extension";
+			productReference = 0F755A311BBFF0EA008C0016 /* CocoaHeadsSthlmWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -109,6 +254,12 @@
 				ORGANIZATIONNAME = Lifesum;
 				TargetAttributes = {
 					0F755A081BBFF0B8008C0016 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					0F755A241BBFF0EA008C0016 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					0F755A301BBFF0EA008C0016 = {
 						CreatedOnToolsVersion = 7.0;
 					};
 				};
@@ -127,6 +278,8 @@
 			projectRoot = "";
 			targets = (
 				0F755A081BBFF0B8008C0016 /* CocoaHeadsSthlm */,
+				0F755A241BBFF0EA008C0016 /* CocoaHeadsSthlmWatch */,
+				0F755A301BBFF0EA008C0016 /* CocoaHeadsSthlmWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -139,6 +292,23 @@
 				0F755A1C1BBFF0B8008C0016 /* LaunchScreen.storyboard in Resources */,
 				0F755A191BBFF0B8008C0016 /* Assets.xcassets in Resources */,
 				0F755A171BBFF0B8008C0016 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F755A231BBFF0EA008C0016 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F755A2B1BBFF0EA008C0016 /* Assets.xcassets in Resources */,
+				0F755A291BBFF0EA008C0016 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F755A2F1BBFF0EA008C0016 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F755A421BBFF0EA008C0016 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +325,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0F755A2D1BBFF0EA008C0016 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F755A3D1BBFF0EA008C0016 /* ExtensionDelegate.m in Sources */,
+				0F755A3A1BBFF0EA008C0016 /* InterfaceController.m in Sources */,
+				0F755A401BBFF0EA008C0016 /* NotificationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0F755A341BBFF0EA008C0016 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F755A301BBFF0EA008C0016 /* CocoaHeadsSthlmWatch Extension */;
+			targetProxy = 0F755A331BBFF0EA008C0016 /* PBXContainerItemProxy */;
+		};
+		0F755A451BBFF0EA008C0016 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F755A241BBFF0EA008C0016 /* CocoaHeadsSthlmWatch */;
+			targetProxy = 0F755A441BBFF0EA008C0016 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0F755A151BBFF0B8008C0016 /* Main.storyboard */ = {
@@ -172,6 +365,14 @@
 				0F755A1B1BBFF0B8008C0016 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0F755A271BBFF0EA008C0016 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F755A281BBFF0EA008C0016 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -279,6 +480,64 @@
 			};
 			name = Release;
 		};
+		0F755A481BBFF0EA008C0016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "CocoaHeadsSthlmWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sillens.iShape.CocoaHeadsSthlm.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		0F755A491BBFF0EA008C0016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "CocoaHeadsSthlmWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sillens.iShape.CocoaHeadsSthlm.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		0F755A4C1BBFF0EA008C0016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = CocoaHeadsSthlmWatch_Extension;
+				INFOPLIST_FILE = CocoaHeadsSthlmWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sillens.iShape.CocoaHeadsSthlm.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		0F755A4D1BBFF0EA008C0016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = CocoaHeadsSthlmWatch_Extension;
+				INFOPLIST_FILE = CocoaHeadsSthlmWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sillens.iShape.CocoaHeadsSthlm.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -296,6 +555,22 @@
 			buildConfigurations = (
 				0F755A211BBFF0B8008C0016 /* Debug */,
 				0F755A221BBFF0B8008C0016 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0F755A471BBFF0EA008C0016 /* Build configuration list for PBXNativeTarget "CocoaHeadsSthlmWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F755A481BBFF0EA008C0016 /* Debug */,
+				0F755A491BBFF0EA008C0016 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0F755A4B1BBFF0EA008C0016 /* Build configuration list for PBXNativeTarget "CocoaHeadsSthlmWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F755A4C1BBFF0EA008C0016 /* Debug */,
+				0F755A4D1BBFF0EA008C0016 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

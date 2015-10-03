@@ -9,10 +9,25 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>CocoaHeadsSthlmWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Notification - CocoaHeadsSthlmWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>0F755A081BBFF0B8008C0016</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0F755A241BBFF0EA008C0016</key>
 		<dict>
 			<key>primary</key>
 			<true/>
