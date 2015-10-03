@@ -30,11 +30,12 @@ typedef void(^MessageReplyHandler)(NSDictionary<NSString *,id> * _Nonnull);
     return self;
 }
 
-- (void)updateApplicationColor:(UIColor *)color
+- (void)updateApplicationColorData:(NSData *)colorData error:(NSError **)error
 {
-    NSError *error;
-    [[WCSession defaultSession] updateApplicationContext:@{@"backgroundColor" : color}
-                                                   error:&error];
+    if (colorData) {
+        [[WCSession defaultSession] updateApplicationContext:@{@"backgroundColor" : colorData}
+                                                       error:error];
+    }
 }
 
 -   (void)session:(WCSession *)session

@@ -11,6 +11,6 @@
 
 @interface PhoneToWatchConnectivityController : NSObject
 
-- (void)updateApplicationColor:(UIColor *)color;
+- (void)updateApplicationColorData:(NSData *)colorData error:(NSError **)error;
 
 @end

@@ -70,11 +70,32 @@
                                       brightness:brightness alpha:1];
     
     [self.view setBackgroundColor:randomColor];
-    
 
     NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject:randomColor];
     [[NSUserDefaults standardUserDefaults] setObject:colorData forKey:@"color"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    NSError *error;
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    [appDelegate.connectivityController updateApplicationColorData:colorData
+                                                         error:&error];
+    
+    if (error) {
+        UIAlertController *alertController =
+        [UIAlertController alertControllerWithTitle:@"Error"
+                                            message:error.localizedDescription
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                              style:UIAlertActionStyleDefault
+                                                            handler:nil];
+        
+        [alertController addAction:alertAction];
+        
+        [self presentViewController:alertController
+                           animated:YES
+                         completion:nil];
+    }
 }
 
 @end
