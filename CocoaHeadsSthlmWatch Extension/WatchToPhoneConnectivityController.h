@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^EmojiSentCompletion)(BOOL success, NSError *error);
+
 @interface WatchToPhoneConnectivityController : NSObject
 
-- (void)sendEmoji:(NSString *)emoji;
+- (void)sendEmoji:(NSString *)emoji
+       completion:(EmojiSentCompletion)completion;
 
 @end

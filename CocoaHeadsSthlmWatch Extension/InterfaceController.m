@@ -45,6 +45,8 @@
     }
     self.pickerItems = [NSArray arrayWithArray:pickerItems];
     [self.interfacePicker setItems:self.pickerItems];
+    
+    self.selectedPickerItem = self.pickerItems.firstObject;
 }
 
 - (IBAction)pickerSelected:(NSInteger)value
@@ -55,19 +57,31 @@
 
 - (IBAction)applyEmoji
 {
-    ExtensionDelegate *delegate = [WKExtension sharedExtension].delegate;
-    [delegate.connectivityController sendEmoji:self.selectedPickerItem.title];
-    
-    WKAlertAction *action = [WKAlertAction actionWithTitle:@"Ok!"
+    WKAlertAction *action = [WKAlertAction actionWithTitle:@"Dismiss"
                                                      style:WKAlertActionStyleDefault
                                                    handler:^{
                                                        
                                                    }];
     
-    [self presentAlertControllerWithTitle:@"Success"
-                                  message:@"Your emoji has been applied to the home screen of your iOS App"
-                           preferredStyle:WKAlertControllerStyleAlert
-                                  actions:@[action]];
+    ExtensionDelegate *delegate = [WKExtension sharedExtension].delegate;
+    [delegate.connectivityController
+     sendEmoji:self.selectedPickerItem.title
+     completion:^(BOOL success, NSError *error) {
+         NSString *alertTitle;
+         NSString *message;
+         if (success) {
+             alertTitle = @"Success";
+             message = @"Your emoji has been applied to the home screen of your iOS App";
+         } else {
+             alertTitle = @"Error";
+             message = error.localizedDescription;
+         }
+         
+         [self presentAlertControllerWithTitle:alertTitle
+                                       message:message
+                                preferredStyle:WKAlertControllerStyleAlert
+                                       actions:@[action]];
+     }];
 }
 
 @end

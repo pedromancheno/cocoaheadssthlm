@@ -8,6 +8,8 @@
 
 #import "PhoneToWatchConnectivityController.h"
 
+#import "AppDelegate.h"
+
 #import <WatchConnectivity/WatchConnectivity.h>
 
 typedef void(^MessageReplyHandler)(NSDictionary<NSString *,id> * _Nonnull);
@@ -30,16 +32,21 @@ typedef void(^MessageReplyHandler)(NSDictionary<NSString *,id> * _Nonnull);
 
 - (void)updateApplicationColor:(UIColor *)color
 {
-
+    NSError *error;
+    [[WCSession defaultSession] updateApplicationContext:@{@"backgroundColor" : color}
+                                                   error:&error];
 }
 
 -   (void)session:(WCSession *)session
 didReceiveMessage:(NSDictionary<NSString *,id> *)message
      replyHandler:(MessageReplyHandler)replyHandler
 {
-    [[NSUserDefaults standardUserDefaults] setObject:message[@"emoji"]
-                                              forKey:@"emoji"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSNotificationCenter defaultCenter] postNotificationName:PhoneToWatchConnectivityControllerDidReceiveEmoji
+                                                        object:message[@"emoji"]];
+    
+    if (replyHandler) {
+        replyHandler(@{@"response" : @YES});
+    }
 }
 
 @end

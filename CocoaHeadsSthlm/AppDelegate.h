@@ -10,6 +10,8 @@
 
 @class PhoneToWatchConnectivityController;
 
+static NSString *const PhoneToWatchConnectivityControllerDidReceiveEmoji = @"PhoneToWatchConnectivityControllerDidReceiveEmoji";
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
