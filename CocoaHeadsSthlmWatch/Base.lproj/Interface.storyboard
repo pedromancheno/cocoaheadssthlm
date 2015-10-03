@@ -13,7 +13,7 @@
                         <group width="1" height="1" alignment="left" layout="vertical" spacing="0.0" id="uvN-ob-gfI">
                             <items>
                                 <label width="0.80000000000000004" alignment="center" text="Set your iOS App's emoji!" textAlignment="center" numberOfLines="2" id="457-GE-nvr"/>
-                                <picker width="50" height="50" alignment="center" verticalAlignment="center" focusStyle="stack" indicatorMode="shownWhileFocused" id="owR-zM-YbZ">
+                                <picker width="50" height="50" alignment="center" verticalAlignment="center" indicatorMode="shownWhileFocused" id="owR-zM-YbZ">
                                     <connections>
                                         <action selector="pickerSelected:" destination="AgC-eL-Hgc" id="nBq-iR-Jpt"/>
                                     </connections>
@@ -29,6 +29,7 @@
                     </items>
                     <connections>
                         <outlet property="interfacePicker" destination="owR-zM-YbZ" id="UPB-O2-Ugc"/>
+                        <outlet property="mainGroup" destination="uvN-ob-gfI" id="MD0-Qv-VhA"/>
                     </connections>
                 </controller>
             </objects>

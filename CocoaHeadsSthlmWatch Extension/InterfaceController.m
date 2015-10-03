@@ -16,6 +16,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfacePicker *interfacePicker;
 @property (strong, nonatomic) NSArray *pickerItems;
 @property (weak, nonatomic) WKPickerItem *selectedPickerItem;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceGroup *mainGroup;
 
 @end
 
@@ -47,6 +48,23 @@
     [self.interfacePicker setItems:self.pickerItems];
     
     self.selectedPickerItem = self.pickerItems.firstObject;
+    
+    NSData *colorData = [[NSUserDefaults standardUserDefaults] objectForKey:@"color"];
+    UIColor *color = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
+    self.mainGroup.backgroundColor = color ? : [UIColor blackColor];
+}
+
+- (void)willActivate
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(appColorDidChange:)
+                                                 name:WatchToPhoneConnectivityControllerDidReceiveAppColor
+                                               object:nil];
+}
+
+- (void)didDeactivate
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (IBAction)pickerSelected:(NSInteger)value
@@ -63,9 +81,15 @@
                                                        
                                                    }];
     
+    NSString *emoji = self.selectedPickerItem.title;
+    
+    if (!emoji) {
+        return;
+    }
+    
     ExtensionDelegate *delegate = [WKExtension sharedExtension].delegate;
     [delegate.connectivityController
-     sendEmoji:self.selectedPickerItem.title
+     sendEmoji:emoji
      completion:^(BOOL success, NSError *error) {
          NSString *alertTitle;
          NSString *message;
@@ -82,6 +106,24 @@
                                 preferredStyle:WKAlertControllerStyleAlert
                                        actions:@[action]];
      }];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:emoji forKey:@"emoji"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)appColorDidChange:(NSNotification *)notification
+{
+    NSData *colorData = notification.object;
+    UIColor *color =[NSKeyedUnarchiver unarchiveObjectWithData:colorData];
+    
+    if (!color) {
+        return;
+    }
+    
+    [self.mainGroup setBackgroundColor:color];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:colorData forKey:@"color"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

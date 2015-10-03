@@ -10,6 +10,8 @@
 
 @class WatchToPhoneConnectivityController;
 
+static NSString *const WatchToPhoneConnectivityControllerDidReceiveAppColor = @"WatchToPhoneConnectivityControllerDidReceiveAppColor";
+
 @interface ExtensionDelegate : NSObject <WKExtensionDelegate>
 
 @property (readonly, nonatomic) WatchToPhoneConnectivityController *connectivityController;

@@ -10,6 +10,8 @@
 
 #import <WatchConnectivity/WatchConnectivity.h>
 
+#import "ExtensionDelegate.h"
+
 @interface WatchToPhoneConnectivityController () <WCSessionDelegate>
 
 @end
@@ -53,7 +55,16 @@ completion:(EmojiSentCompletion)completion
              }
          }];
     }
-    // Implement!
+}
+
+- (void)session:(WCSession *)session
+didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSData *colorData = applicationContext[@"appColorData"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:WatchToPhoneConnectivityControllerDidReceiveAppColor
+                                                            object:colorData];
+    });
 }
 
 @end

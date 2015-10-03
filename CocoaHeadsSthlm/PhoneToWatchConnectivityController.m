@@ -33,7 +33,7 @@ typedef void(^MessageReplyHandler)(NSDictionary<NSString *,id> * _Nonnull);
 - (void)updateApplicationColorData:(NSData *)colorData error:(NSError **)error
 {
     if (colorData) {
-        [[WCSession defaultSession] updateApplicationContext:@{@"backgroundColor" : colorData}
+        [[WCSession defaultSession] updateApplicationContext:@{@"appColorData" : colorData}
                                                        error:error];
     }
 }
@@ -42,12 +42,14 @@ typedef void(^MessageReplyHandler)(NSDictionary<NSString *,id> * _Nonnull);
 didReceiveMessage:(NSDictionary<NSString *,id> *)message
      replyHandler:(MessageReplyHandler)replyHandler
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:PhoneToWatchConnectivityControllerDidReceiveEmoji
-                                                        object:message[@"emoji"]];
-    
-    if (replyHandler) {
-        replyHandler(@{@"response" : @YES});
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:PhoneToWatchConnectivityControllerDidReceiveEmoji
+                                                            object:message[@"emoji"]];
+        
+        if (replyHandler) {
+            replyHandler(@{@"response" : @YES});
+        }
+    });
 }
 
 @end
