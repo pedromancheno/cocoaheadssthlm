@@ -21,6 +21,10 @@
 		0F755A401BBFF0EA008C0016 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F755A3F1BBFF0EA008C0016 /* NotificationController.m */; };
 		0F755A421BBFF0EA008C0016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F755A411BBFF0EA008C0016 /* Assets.xcassets */; };
 		0F755A461BBFF0EA008C0016 /* CocoaHeadsSthlmWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0F755A251BBFF0EA008C0016 /* CocoaHeadsSthlmWatch.app */; };
+		0F755A511BC054D4008C0016 /* WatchToPhoneConnectivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F755A501BC054D4008C0016 /* WatchToPhoneConnectivityController.m */; settings = {ASSET_TAGS = (); }; };
+		0F755A531BC0550F008C0016 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F755A521BC0550F008C0016 /* WatchConnectivity.framework */; };
+		0F755A551BC0551A008C0016 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F755A541BC0551A008C0016 /* WatchConnectivity.framework */; };
+		0F755A581BC055C0008C0016 /* PhoneToWatchConnectivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F755A571BC055C0008C0016 /* PhoneToWatchConnectivityController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +94,12 @@
 		0F755A3F1BBFF0EA008C0016 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		0F755A411BBFF0EA008C0016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F755A431BBFF0EA008C0016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F755A4F1BC054D4008C0016 /* WatchToPhoneConnectivityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchToPhoneConnectivityController.h; sourceTree = "<group>"; };
+		0F755A501BC054D4008C0016 /* WatchToPhoneConnectivityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchToPhoneConnectivityController.m; sourceTree = "<group>"; };
+		0F755A521BC0550F008C0016 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
+		0F755A541BC0551A008C0016 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		0F755A561BC055C0008C0016 /* PhoneToWatchConnectivityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneToWatchConnectivityController.h; sourceTree = "<group>"; };
+		0F755A571BC055C0008C0016 /* PhoneToWatchConnectivityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneToWatchConnectivityController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F755A551BC0551A008C0016 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F755A531BC0550F008C0016 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +125,8 @@
 		0F755A001BBFF0B8008C0016 = {
 			isa = PBXGroup;
 			children = (
+				0F755A541BC0551A008C0016 /* WatchConnectivity.framework */,
+				0F755A521BC0550F008C0016 /* WatchConnectivity.framework */,
 				0F755A0B1BBFF0B8008C0016 /* CocoaHeadsSthlm */,
 				0F755A261BBFF0EA008C0016 /* CocoaHeadsSthlmWatch */,
 				0F755A351BBFF0EA008C0016 /* CocoaHeadsSthlmWatch Extension */,
@@ -142,6 +156,8 @@
 				0F755A1A1BBFF0B8008C0016 /* LaunchScreen.storyboard */,
 				0F755A1D1BBFF0B8008C0016 /* Info.plist */,
 				0F755A0C1BBFF0B8008C0016 /* Supporting Files */,
+				0F755A561BC055C0008C0016 /* PhoneToWatchConnectivityController.h */,
+				0F755A571BC055C0008C0016 /* PhoneToWatchConnectivityController.m */,
 			);
 			path = CocoaHeadsSthlm;
 			sourceTree = "<group>";
@@ -176,6 +192,8 @@
 				0F755A411BBFF0EA008C0016 /* Assets.xcassets */,
 				0F755A431BBFF0EA008C0016 /* Info.plist */,
 				0F755A361BBFF0EA008C0016 /* Supporting Files */,
+				0F755A4F1BC054D4008C0016 /* WatchToPhoneConnectivityController.h */,
+				0F755A501BC054D4008C0016 /* WatchToPhoneConnectivityController.m */,
 			);
 			path = "CocoaHeadsSthlmWatch Extension";
 			sourceTree = "<group>";
@@ -321,6 +339,7 @@
 			files = (
 				0F755A141BBFF0B8008C0016 /* ViewController.m in Sources */,
 				0F755A111BBFF0B8008C0016 /* AppDelegate.m in Sources */,
+				0F755A581BC055C0008C0016 /* PhoneToWatchConnectivityController.m in Sources */,
 				0F755A0E1BBFF0B8008C0016 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +350,7 @@
 			files = (
 				0F755A3D1BBFF0EA008C0016 /* ExtensionDelegate.m in Sources */,
 				0F755A3A1BBFF0EA008C0016 /* InterfaceController.m in Sources */,
+				0F755A511BC054D4008C0016 /* WatchToPhoneConnectivityController.m in Sources */,
 				0F755A401BBFF0EA008C0016 /* NotificationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
