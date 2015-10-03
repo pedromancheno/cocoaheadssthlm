@@ -10,4 +10,6 @@
 
 @interface WatchToPhoneConnectivityController : NSObject
 
+- (void)sendEmoji:(NSString *)emoji;
+
 @end

@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15B22c" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider=""/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" spacing="0.0" id="uvN-ob-gfI">
+                            <items>
+                                <label width="0.80000000000000004" alignment="center" text="Set your iOS App's emoji!" textAlignment="center" numberOfLines="2" id="457-GE-nvr"/>
+                                <picker width="50" height="50" alignment="center" verticalAlignment="center" focusStyle="stack" indicatorMode="shownWhileFocused" id="owR-zM-YbZ">
+                                    <connections>
+                                        <action selector="pickerSelected:" destination="AgC-eL-Hgc" id="nBq-iR-Jpt"/>
+                                    </connections>
+                                </picker>
+                                <button width="1" alignment="center" verticalAlignment="bottom" title="Apply" id="WRh-U9-4tR">
+                                    <connections>
+                                        <action selector="applyEmoji" destination="AgC-eL-Hgc" id="2Rz-wS-zbY"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="5"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="interfacePicker" destination="owR-zM-YbZ" id="UPB-O2-Ugc"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
@@ -31,7 +53,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider=""/>
+                <controller id="4sK-HA-Art" customClass="NotificationController"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>

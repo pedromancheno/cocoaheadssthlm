@@ -16,6 +16,9 @@
 
 @implementation WatchToPhoneConnectivityController
 
-
+- (void)sendEmoji:(NSString *)emoji
+{
+    // Implement!
+}
 
 @end

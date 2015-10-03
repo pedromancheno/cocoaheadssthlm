@@ -8,8 +8,14 @@
 
 #import "InterfaceController.h"
 
+#import "ExtensionDelegate.h"
+#import "WatchToPhoneConnectivityController.h"
 
 @interface InterfaceController()
+
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfacePicker *interfacePicker;
+@property (strong, nonatomic) NSArray *pickerItems;
+@property (weak, nonatomic) WKPickerItem *selectedPickerItem;
 
 @end
 
@@ -19,17 +25,49 @@
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
 
-    // Configure interface objects here.
+    NSArray *emojis = @[
+                        @"😅",
+                        @"😘",
+                        @"😎",
+                        @"😆",
+                        @"😳",
+                        @"😪",
+                        @"😰"
+                        ];
+    
+    NSMutableArray<WKPickerItem *> *pickerItems = [NSMutableArray array];
+    
+    for (NSString *emoji in emojis) {
+        WKPickerItem *item = [[WKPickerItem alloc] init];
+        item.title = emoji;
+        
+        [pickerItems addObject:item];
+    }
+    self.pickerItems = [NSArray arrayWithArray:pickerItems];
+    [self.interfacePicker setItems:self.pickerItems];
 }
 
-- (void)willActivate {
-    // This method is called when watch view controller is about to be visible to user
-    [super willActivate];
+- (IBAction)pickerSelected:(NSInteger)value
+{
+    self.selectedPickerItem = self.pickerItems[value];
 }
 
-- (void)didDeactivate {
-    // This method is called when watch view controller is no longer visible
-    [super didDeactivate];
+
+- (IBAction)applyEmoji
+{
+    ExtensionDelegate *delegate = [WKExtension sharedExtension].delegate;
+    [delegate.connectivityController sendEmoji:self.selectedPickerItem.title];
+    
+    WKAlertAction *action = [WKAlertAction actionWithTitle:@"Ok!"
+                                                     style:WKAlertActionStyleDefault
+                                                   handler:^{
+                                                       
+                                                   }];
+    
+    [self presentAlertControllerWithTitle:@"Success"
+                                  message:@"Your emoji has been applied to the home screen of your iOS App"
+                           preferredStyle:WKAlertControllerStyleAlert
+                                  actions:@[action]];
 }
 
 @end

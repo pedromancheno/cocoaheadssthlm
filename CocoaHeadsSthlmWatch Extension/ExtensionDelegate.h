@@ -8,6 +8,10 @@
 
 #import <WatchKit/WatchKit.h>
 
+@class WatchToPhoneConnectivityController;
+
 @interface ExtensionDelegate : NSObject <WKExtensionDelegate>
+
+@property (readonly, nonatomic) WatchToPhoneConnectivityController *connectivityController;
 
 @end
