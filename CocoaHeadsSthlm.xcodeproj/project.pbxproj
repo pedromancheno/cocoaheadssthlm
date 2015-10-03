@@ -151,13 +151,13 @@
 				0F755A101BBFF0B8008C0016 /* AppDelegate.m */,
 				0F755A121BBFF0B8008C0016 /* ViewController.h */,
 				0F755A131BBFF0B8008C0016 /* ViewController.m */,
+				0F755A561BC055C0008C0016 /* PhoneToWatchConnectivityController.h */,
+				0F755A571BC055C0008C0016 /* PhoneToWatchConnectivityController.m */,
 				0F755A151BBFF0B8008C0016 /* Main.storyboard */,
 				0F755A181BBFF0B8008C0016 /* Assets.xcassets */,
 				0F755A1A1BBFF0B8008C0016 /* LaunchScreen.storyboard */,
 				0F755A1D1BBFF0B8008C0016 /* Info.plist */,
 				0F755A0C1BBFF0B8008C0016 /* Supporting Files */,
-				0F755A561BC055C0008C0016 /* PhoneToWatchConnectivityController.h */,
-				0F755A571BC055C0008C0016 /* PhoneToWatchConnectivityController.m */,
 			);
 			path = CocoaHeadsSthlm;
 			sourceTree = "<group>";
