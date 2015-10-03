@@ -26,16 +26,22 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="fkx-nX-3CJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nbc-WI-0uH"/>
                             <constraint firstItem="fkx-nX-3CJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cY2-iL-JCY"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Hsq-yb-wbA" appends="YES" id="pVV-rw-hhx"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="emojiLabel" destination="fkx-nX-3CJ" id="h5g-8R-E8z"/>
+                        <outlet property="tapGestureRecognizer" destination="Hsq-yb-wbA" id="M6i-Q7-Hbv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Hsq-yb-wbA"/>
             </objects>
         </scene>
     </scenes>
