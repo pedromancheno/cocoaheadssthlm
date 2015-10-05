@@ -21,6 +21,41 @@
 - (void)applicationDidFinishLaunching
 {
     self.connectivityController = [[WatchToPhoneConnectivityController alloc] init];
+    
+    
 }
+
+#pragma mark - Notification Handling
+
+- (void)handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)localNotification
+{
+    
+}
+
+- (void)handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)localNotification withResponseInfo:(NSDictionary *)responseInfo
+{
+    
+}
+
+- (void)handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)remoteNotification
+{
+    
+}
+
+- (void)handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)remoteNotification withResponseInfo:(NSDictionary *)responseInfo
+{
+    
+}
+
+- (void)didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    // Called when the user is interacting with your watch app
+}
+
+- (void)didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    // Called when the user is interacting with your watch app
+}
+
 
 @end

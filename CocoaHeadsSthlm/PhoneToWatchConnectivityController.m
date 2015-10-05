@@ -23,7 +23,8 @@ typedef void(^MessageReplyHandler)(NSDictionary<NSString *,id> * _Nonnull);
 - (instancetype)init
 {
     if (self = [super init]) {
-        // Implement!
+        [WCSession defaultSession].delegate = self;
+        [[WCSession defaultSession] activateSession];
     }
     
     return self;
@@ -31,9 +32,24 @@ typedef void(^MessageReplyHandler)(NSDictionary<NSString *,id> * _Nonnull);
 
 - (void)updateApplicationColorData:(NSData *)colorData error:(NSError **)error
 {
-    // Implement!
+    if (colorData) {
+        [[WCSession defaultSession] updateApplicationContext:@{@"appColorData" : colorData}
+                                                       error:error];
+    }
 }
 
-// Implement didReceiveMessage Delegate method!
+-   (void)session:(WCSession *)session
+didReceiveMessage:(NSDictionary<NSString *,id> *)message
+     replyHandler:(MessageReplyHandler)replyHandler
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:PhoneToWatchConnectivityControllerDidReceiveEmoji
+                                                            object:message[@"emoji"]];
+        
+        if (replyHandler) {
+            replyHandler(@{@"response" : @YES});
+        }
+    });
+}
 
 @end
